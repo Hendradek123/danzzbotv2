@@ -216,6 +216,11 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
     let mpt = clockString(_mpt)
       const sections = [
    {
+        title: `${htki} RULES ${htka}`,
+        rows: [
+            {title: `🚦 ${pmenus} PLIS READ THIS RULES /n® ┊ DILARANG SPAM BOT | *JIKA BELUM BERDONASI*/n® ┊ GUNAKAN BOT SEBAIK MUNGKIN | *PASTI FAHAMLAH*/n® ┊ DANZ OWNER ADALAH DEWA`, rowId: ".donasi", description: "Rules DanzBot-MD"},
+        ]
+	},{
 	title: `${htki} MAIN ${htka}`,
 	rows: [
 	    {title: `⚡ ${pmenus} SPEED BOT`, rowId: ".ping", description: "Menampilkan kecepatan respon BOT"},
@@ -263,24 +268,24 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
 let usrs = db.data.users[m.sender]
 let tek = `*${ucapan()} ${conn.getName(m.sender)}*
 *U S E R  I N F O*
-• *ɴᴀᴍᴇ:* ${usrs.registered ? usrs.name : conn.getName(m.sender)}
-• *ᴛᴀɢs:* @${m.sender.split`@`[0]}
-• *sᴛᴀᴛᴜs:* ${m.sender.split`@`[0] == nomorown ? 'Developer' : (usrs.premiumTime >= 1 ? 'Premium User' : 'Free User')}
-• *ᴘʀᴇᴍɪᴜᴍ:* ${usrs.premiumTime > 1 ? 'Yes': 'No'}
+ღ *ɴᴀᴍᴇ:* ${usrs.registered ? usrs.name : conn.getName(m.sender)}
+ღ *ᴛᴀɢs:* @${m.sender.split`@`[0]}
+ღ *sᴛᴀᴛᴜs:* ${m.sender.split`@`[0] == nomorown ? 'Developer' : (usrs.premiumTime >= 1 ? 'Premium User' : 'Free User')}
+ღ *ᴘʀᴇᴍɪᴜᴍ:* ${usrs.premiumTime > 1 ? 'Yes': 'No'}
 
 *S T A T U S  I N F O*
-• *ᴜᴘᴛɪᴍᴇ:* ${mpt}
-• *ᴛɪᴍᴇ:* ${moment.tz('Asia/Jakarta').format('HH')} H  ${moment.tz('Asia/Jakarta').format('mm')} M  ${moment.tz('Asia/Jakarta').format('ss')} S
-• *ᴜsᴇʀs:* ${Object.keys(global.db.data.users).length}
-• *ʟɪᴍɪᴛ:* ${usrs.limit}
-• *ʟᴇᴠᴇʟ:* ${usrs.level}
-• *ʀᴏʟᴇ:* ${usrs.role}${usrs.premiumTime > 1 ? `
-• *ᴇxᴘɪʀᴇᴅ ᴘʀᴇᴍɪᴜᴍ:*
+ღ *ᴜᴘᴛɪᴍᴇ:* ${mpt}
+ღ *ᴛɪᴍᴇ:* ${moment.tz('Asia/Jakarta').format('HH')} H  ${moment.tz('Asia/Jakarta').format('mm')} M  ${moment.tz('Asia/Jakarta').format('ss')} S
+ღ *ᴜsᴇʀs:* ${Object.keys(global.db.data.users).length}
+ღ *ʟɪᴍɪᴛ:* ${usrs.limit}
+ღ *ʟᴇᴠᴇʟ:* ${usrs.level}
+ღ *ʀᴏʟᴇ:* ${usrs.role}${usrs.premiumTime > 1 ? `
+ღ *ᴇxᴘɪʀᴇᴅ ᴘʀᴇᴍɪᴜᴍ:*
 ${clockStringP(usrs.premiumTime - new Date())}` : ''}
 `
 const listMessage = {
   text: tek,
-  footer: '📮 *Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada Owner',
+  footer: '📮 *Note:* _𝐓𝐞𝐫𝐢𝐦𝐚𝐤𝐚𝐬𝐢𝐡 𝐒𝐮𝐝𝐚𝐡 𝐌𝐞𝐧𝐠𝐠𝐮𝐧𝐚𝐤𝐚𝐧 𝐁𝐨𝐭 𝐈𝐧𝐢 𝐇𝐚𝐫𝐚𝐩 𝐓𝐢𝐝𝐚𝐤 𝐒𝐩𝐚𝐦, & 𝐕𝐢𝐝𝐞𝐨𝐜𝐚𝐥𝐥 / 𝐓𝐞𝐥𝐞𝐩𝐨𝐧!_ *Kalau Ada Yang Error Hubungi .owner*',
   mentions: await conn.parseMention(tek),
   title: `${htki} *LIST MENU* ${htka}`,
   buttonText: `CLICK HERE ⎙`,
@@ -488,7 +493,7 @@ const listMessage = {
             fileLength: fsizedoc,
             pageCount: fpagedoc,
             caption: text,
-            footer: titlebot + '\n⚡ Supported By FR Team',
+            footer: titlebot + '\n⚡ Supported By Danzz Team',
             templateButtons: [
                 {
                     urlButton: {
